@@ -1,40 +1,28 @@
-﻿using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 
 public class GameController : MonoBehaviour
 {
-    private const int size = 9;
-    private int[] _fieldArray = new int[size];
-    private bool _nextIsX;
+    private const int _size = 9;
+    private int[] _fieldArray = new int[_size];
+    private bool _currentTurnX;
     private GameState _result;
-
-    [SerializeField] private Sprite _xSprite, _oSprite;
-
-    [SerializeField] private Image[] _images = new Image[size];
 
     [SerializeField] private UI _UIController;
 
     public void SetFieldState(int place)
     {
-        if (!_nextIsX)
-        {
-            _fieldArray[place] = 1;
-            _images[place].sprite = _xSprite;
-            _nextIsX = true;
-        }
-        else
-        {
-            _fieldArray[place] = -1;
-            _images[place].sprite = _oSprite;
-            _nextIsX = false;
-        }
+        _fieldArray[place] = 1 - 2 * (_currentTurnX ? 0: 1);
+        _UIController.SetMark(place, _currentTurnX);
+        _currentTurnX = !_currentTurnX;
+        
         CheckWin();
+
         if (_result != GameState.GameInProgress)
         {
             _UIController.AnnounceMatchResult(_result);
         }
+
         Debug.Log(_result);
     }
     private void CheckWin()
@@ -80,7 +68,7 @@ public class GameController : MonoBehaviour
                 return;
         }
 
-        for (var i = 0; i < size; i++)
+        for (var i = 0; i < _size; i++)
         {
             if (_fieldArray[i] == 0) return;
         }

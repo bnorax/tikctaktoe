@@ -879,18 +879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c5987a2417b4c43a409b901ef3e761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xSprite: {fileID: 21300000, guid: 171f3ca9eb0e75741970f26074007384, type: 3}
-  _oSprite: {fileID: 21300000, guid: cd2b6ddc93604ae45a24f77fdc988a8c, type: 3}
-  _images:
-  - {fileID: 184843549}
-  - {fileID: 1942851939}
-  - {fileID: 2050662056}
-  - {fileID: 1547594338}
-  - {fileID: 2004032182}
-  - {fileID: 1056120867}
-  - {fileID: 768261418}
-  - {fileID: 1696682705}
-  - {fileID: 658434489}
   _UIController: {fileID: 1784800703}
 --- !u!4 &1092255338
 Transform:
@@ -1331,6 +1319,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _announceButtonText: {fileID: 263710310}
   _resetButton: {fileID: 1360657306}
+  _xSprite: {fileID: 21300000, guid: 171f3ca9eb0e75741970f26074007384, type: 3}
+  _oSprite: {fileID: 21300000, guid: cd2b6ddc93604ae45a24f77fdc988a8c, type: 3}
+  _images:
+  - {fileID: 184843549}
+  - {fileID: 1942851939}
+  - {fileID: 2050662056}
+  - {fileID: 1547594338}
+  - {fileID: 2004032182}
+  - {fileID: 1056120867}
+  - {fileID: 768261418}
+  - {fileID: 1696682705}
+  - {fileID: 658434489}
 --- !u!4 &1784800704
 Transform:
   m_ObjectHideFlags: 0
