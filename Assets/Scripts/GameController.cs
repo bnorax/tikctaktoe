@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour
 {
     private const int _size = 9;
     private int[] _fieldArray = new int[_size];
-    private bool _currentTurnX;
+    private bool _currentTurnX = true;
     private GameState _result;
 
     [SerializeField] private UI _UIController;
