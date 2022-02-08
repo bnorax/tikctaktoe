@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
+    private const int _size = 9;
+    
     [SerializeField] private TextMeshProUGUI _announceButtonText;
     [SerializeField] private TextMeshProUGUI _resetButton;
 
     [SerializeField] private Sprite _xSprite, _oSprite;
 
-    private const int _size = 9;
     [SerializeField] private Image[] _images = new Image[_size];
 
 
@@ -37,7 +38,7 @@ public class UI : MonoBehaviour
         switch (result)
         {
             case GameController.GameState.Tie:
-                _announceButtonText.SetText("Tie!");
+                _announceButtonText.text = ("Tie!");
                 return;
             case GameController.GameState.OWin:
                 _announceButtonText.SetText("O wins!");

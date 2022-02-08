@@ -3,8 +3,8 @@
 
 public class GameController : MonoBehaviour
 {
-    private const int _size = 9;
-    private int[] _fieldArray = new int[_size];
+    private const int Size = 9;
+    private int[] _fieldArray = new int[Size];
     private bool _currentTurnX = true;
     private GameState _result;
 
@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 
     public void SetFieldState(int place)
     {
+        if(_fieldArray[place] != 0) return;
         _fieldArray[place] = 1 - 2 * (_currentTurnX ? 0: 1);
         _UIController.SetMark(place, _currentTurnX);
         _currentTurnX = !_currentTurnX;
@@ -68,7 +69,7 @@ public class GameController : MonoBehaviour
                 return;
         }
 
-        for (var i = 0; i < _size; i++)
+        for (var i = 0; i < Size; i++)
         {
             if (_fieldArray[i] == 0) return;
         }
